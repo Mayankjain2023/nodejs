@@ -1,0 +1,91 @@
+Question : Nodejs is single threaded or mutli threaded?
+--> Nodejs is single threaded i.e it can run only one command at a time
+whereas multithreaded can run mutliple commands at a time
+
+
+
+Question: If node modules get deleted ?
+-> Just write npm i in command line ,all the required packages will get installed
+
+
+TO ignore node modules create .gitignore file and mention the name of the file u dont want to 
+be pushed into the github repo
+
+
+
+QUESTION : Nodejs is async lang or sync ?
+
+ANS: Nodejs is a async lang
+
+sync-> multiple commands run in sync with each other
+async-> lets say first command runs,2nd gets stuck because of complexity, so it will not wait for 
+2nd to execute first,it will execute the next command .Whenever 2nd one will get completed it will 
+get the mssg
+
+
+QUESTION: server header num :200,201,202,400,404,500
+200 is generally used when we have to send the data
+404 denotes page not found
+500 shows internal server error
+201 creted
+202 accepted
+400 bad request
+
+
+
+QUESTION: is it possible to get the data of c/d drive from a particular folder in Nodejs
+No,bcz node works by creating the server of the file on which it is running , and data can only
+be accessed from the files present within that server
+
+
+
+QUESTION : WHat is the drawback of asycn programming lang
+
+a=10
+b=0
+
+setTimeout(()=>{
+    b=20
+},2000)
+
+console.log(a+b)
+
+//value of b should be 20 after updation but it prints 0 because ,updation occurs later
+
+
+// THIS ISSUE IS RESOLVED USING {PROMISE}-> JUST PUT THE COMPLEX TIME TAKING FUNC INSIDE THE PROMISE
+
+
+
+///ARCHITECTURE OF NODEJS->INTERNAL WORKING
+
+1.CALL STACK
+2.NODE APIs
+3.CALLBACK QUEUE
+
+
+Points:
+1. main() function is already present in call stack as it is global for the executing file
+2. all the functions in the file get registered in the call stack
+3. call stack acts as a registry for all the functions
+4. when the function completes executing the task it automatically leaves the call stack space
+5. when all the fucntions complete the execution ,main() also leaves the call stack and call stack 
+    becomes empty;
+6.funtions which are not core to node ,first goes to NODE API section for e.g setTimeout() and from 
+    there they go to callback queue instead of directly coming to call stack
+
+7. they don't come to call stack directly because ,they require call stack to be completely empty
+    that happens when main() leaves the stack space
+8.from Node API section ,these functions come one by one to call back queue to call stack 
+        ____________          __________
+        |           |        |          |
+        |           |        | NODE API |
+        |   call    |        |          |
+        |   stack   |        |__________|
+        |           |
+        |___________|           
+
+        ______________________
+        |                     |
+        |    Call Back queue  |
+        |_____________________|

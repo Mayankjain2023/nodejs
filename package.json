@@ -1,0 +1,30 @@
+{
+  "name": "learning-node",
+  "version": "1.0.0",
+  "description": "Nodejs learnings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mayankjain2023/nodejs.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Mayank Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mayankjain2023/nodejs/issues"
+  },
+  "homepage": "https://github.com/Mayankjain2023/nodejs#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "colors": "^1.4.0",
+    "simple-node-logger": "^21.8.12"
+  }
+  
+
+  
+}
